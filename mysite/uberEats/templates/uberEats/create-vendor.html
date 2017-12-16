@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Vendor</title>
+    </head>
+    <body>
+        <h1>Create Vendor Form</h1>
+        <form action="" method="post">
+        {% csrf_token %}
+            <label>Name</label><br>
+            <input type="text" name="name" value="" placeholder="name" /><br>
+            <label>Cuisine</label><br>
+            <input type="text" name="cuisine" value=""  placeholder="cuisine" /><br>
+            <label>Price</label><br>
+            <input type="text" name="price" value="" placeholder="price" /><br>
+            <label>Location</label><br>
+            <input type="text" name="location" value=""  placeholder="location" /><br>
+
+            <input type="submit" value="createVendor" />
+        </form>
+    </body>
+</html>
+
+

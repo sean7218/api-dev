@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UberEats</title>
+    </head>
+    <body>
+        <ul>
+        {% for vendor in vendors %}
+        <li> {{ vendor.id }} : {{ vendor.name }} | {{ vendor.price }} | {{ vendor.cuisine }} | {{ vendor.location}}</li>
+        {% endfor %}
+        </ul>
+        <button onClick="vendorCreate()">Create</button>
+        <script type="text/javascript">
+            function vendorCreate() {
+                location.href = "create"
+            }
+        </script>
+    </body>
+</html>
