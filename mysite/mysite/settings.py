@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ubereats',
+        'NAME': 'stacker',
         'USER': 'root',
         'PASSWORD': 'Cle340tow',
         'HOST': 'localhost',

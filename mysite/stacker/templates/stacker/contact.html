@@ -1,0 +1,14 @@
+{% extends "base.html %}
+
+
+{% block content %}
+    <h1>Contact</h1>
+    <form action="/contact" method="POST">
+        <label for="your_name"> Name </label>
+        <input id="your_name" type="text" name="name" value={{ current_name }}>
+        <label for="your_email"> Email </label>
+        <input id="your_email" type="text" name=email" value={{ current_email }}>
+        <input type="submit" value="OK" >
+    </form>
+{% endblock %}
+
