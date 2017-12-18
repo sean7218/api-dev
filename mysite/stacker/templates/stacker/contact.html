@@ -1,14 +1,33 @@
-{% extends "base.html %}
+{% extends "stacker/base.html" %}
 
 
 {% block content %}
-    <h1>Contact</h1>
-    <form action="/contact" method="POST">
-        <label for="your_name"> Name </label>
-        <input id="your_name" type="text" name="name" value={{ current_name }}>
-        <label for="your_email"> Email </label>
-        <input id="your_email" type="text" name=email" value={{ current_email }}>
-        <input type="submit" value="OK" >
-    </form>
+<div class="main-container container">
+    <div class="row">
+        <form class="col s12 m8 offset-m2 l8 offset-l2 ">
+            <div class="row">  
+                <h1>Contact</h1>
+                    <label for="your_name"> Name </label>
+                    <input id="your_name" type="text" name="name" value={{ current_name }}>
+                    <label for="your_email"> Email </label>
+                    <input id="your_email" type="text" name=email" value={{ current_email }}>
+            </div>
+            <div class="row"> 
+                <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+                    <div class="row">
+                        <div class="col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label for="textarea1">Message</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>  
+    </div>   
+</div>
 {% endblock %}
 

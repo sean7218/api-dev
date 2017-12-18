@@ -1,0 +1,39 @@
+
+{% extends 'stacker/base.html' %}
+
+{%block content %}
+<style>
+.banner {
+    background-image: url('https://static1.squarespace.com/static/581f7c3b5016e1dae7ab3444/t/58e7c078bf629ae56bf34b99/1491583097827/Apple+Banner.jpg?format=1000w');
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+.banner ul {
+    margin: 0px 0px 0px 0px;
+    color: white;
+}
+</style>
+<div class='banner'>
+    <ul>
+        <li>Home</li>
+        <li>Blog</li>
+        <li>Contact</li>
+        <li>Github</li>
+    </ul>
+</div>
+
+{% endblock %}
+
+   
+  
+ 
+
+
+
+
+
+
+

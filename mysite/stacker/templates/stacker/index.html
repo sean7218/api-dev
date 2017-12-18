@@ -1,13 +1,108 @@
-{% load static %}
-<DOCTYPE html>
-<html>
-    <head>
-        <title>Stacker</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href={% static 'stacker/style.css' %}>
-    </head>
-    <body>
-        <h1>Hello Stacker! Welcome Home.</h1>
-    </body>
-</html>
+
+{% extends 'stacker/base.html' %}
+
+{%block content %}
+<style>
+.banner {
+    background-image: url('https://static1.squarespace.com/static/581f7c3b5016e1dae7ab3444/t/58e7c078bf629ae56bf34b99/1491583097827/Apple+Banner.jpg?format=1000w');
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+.banner .menu {
+    margin: 0px 0px 0px 0px;
+    color: white;
+}
+.stack-panel {
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+.stack-table {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+</style>
+<div class='banner'>
+    {% include 'stacker/header.html' %}    
+    <div class="quick-container">
+        <div class="row">
+            <div class="col s5 offset-s3">
+              
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div class='stack-panel'>
+ 
+    <div class="control-panel">
+        <div class="row">
+            <div class="col s12">
+                <a class="waves-effect waves-light btn">Total</a>
+                <a class="waves-effect waves-light btn">Load</a>
+                <a class="waves-effect waves-light btn">New</a>
+            </div> 
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected></option>
+                    <option value="family">Family</option>
+                    <option value="health">Health</option>
+                    <option value="hobby">Hobby</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="stack-table">
+    <div class="row">
+    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
+        <h4>Performane Table</h4>
+        <h6>stacks for 2018</h6>
+    <table class="striped highlight">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Goal</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>House</td>
+                <td>350,000</td>
+                <td>50,000</td>
+            </tr>
+            <tr>
+                <td>Car</td>
+                <td>10,000</td>
+                <td>50,000</td>
+            </tr>
+            <tr>
+                <td>Patagonia Trip</td>
+                <td>5,000</td>
+                <td>1,000</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+   
+  
+ 
+
+
+
+
+
+
+

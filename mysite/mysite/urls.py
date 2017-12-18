@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^uber/', include('uberEats.urls')),
     url(r'^polls/', include('polls.urls')),
     url(r'^stacker/', include('stacker.urls')),
+    url(r'', views.index)
 ]
 
 
