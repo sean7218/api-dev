@@ -16,4 +16,9 @@ urlpatterns = [
         path('contact', views.ContactView.as_view(), name='contact'),
         # /stacker/blog
         path('blog', views.BlogView.as_view(), name='blog'),
+        # /stacker/create
+        path('create', views.CreateStackView.as_view(), name='create_stack'),
+        # /stacker/update
+        path('update/<int:pk>', views.UpdateStackView.as_view(), name='update_stack'),
+
 ]

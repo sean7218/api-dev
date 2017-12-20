@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from django import forms
+from django.views.generic.edit import (CreateView, UpdateView, FormView)
+from stacker.models import Stack
 
 # Create your views here.
 
@@ -27,6 +29,16 @@ class BlogView(View):
         # <view logic>
         context = {'title': 'blog'}
         return render(request, 'stacker/blog.html', context)
+
+class CreateStackView(CreateView):
+    model = Stack
+    fields = ['name', 'category', 'goal', 'balance','owner']
+    template_name = 'stacker/stack_create_form.html'
+
+class UpdateStackView(UpdateView):
+    model = Stack
+    fields = ['name', 'category', 'goal', 'balance','owner']
+    template_name_suffix = '_update_form'
 
 
 
