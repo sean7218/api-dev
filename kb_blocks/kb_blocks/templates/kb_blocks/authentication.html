@@ -1,0 +1,32 @@
+<style>
+.container-auth-content{
+    padding-top: 100px;
+    text-align: center;
+    }
+
+.container-auth-inner{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 250px;
+    }
+
+.container-input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+</style>
+
+<div class="container-auth-content">
+    {%if sign_in_form and sign_up_form%}
+    <a class="btn btn-{%if content_name == sign_in_form.name%}default{%else%}primary{%endif%}" change="{{self.name}}={{sign_in_form.name}}">Sign In</a>
+    <a class="btn btn-{%if content_name == sign_up_form.name%}default{%else%}primary{%endif%}" change="{{self.name}}={{sign_up_form.name}}">Sign Up</a>
+    {%endif%}
+    <div class="container-auth-inner">
+        <h3>
+            {%if content_value == sign_in_form.name%}Sign In{%endif%}
+            {%if content_value == sign_up_form.name%}Sign Up{%endif%}
+        </h3>
+        {{content}}
+    </div>
+</div>

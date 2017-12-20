@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- kbuilds, LLC -->
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{static_prefix}}{{self.FAVICON}}">
+
+        {%for css in css_list%}
+            <link rel="stylesheet" href="{%if 'https://' in css%}{{css}}{%else%}{{static_prefix}}{{css}}{%endif%}">
+        {%endfor%}
+
+        {%for js in js_list%}
+            <script src="{%if 'https://' in js%}{{js}}{%else%}{{static_prefix}}{{js}}{%endif%}"></script>
+        {%endfor%}
+
+        <script>
+        //Analytics
+        "use strict";
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        </script>
+
+        <script>
+        "use strict"
+        $(function(){
+            KbBlocks("{{self.id}}",
+                     {{initial_state}},
+                     {{tracker_list}})
+            })
+        </script>
+
+    </head>
+
+    <body>
+
+        <div id="{{self.id}}">
+            {{content}}
+        </div>
+
+    </body>
+
+</html>

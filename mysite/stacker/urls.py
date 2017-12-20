@@ -21,4 +21,5 @@ urlpatterns = [
         # /stacker/update
         path('update/<int:pk>', views.UpdateStackView.as_view(), name='update_stack'),
 
+
 ]

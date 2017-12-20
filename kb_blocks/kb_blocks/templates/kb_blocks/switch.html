@@ -1,0 +1,13 @@
+<script>
+{%if self.SCROLL_RESET%}
+$(function(){
+    {%if self.SCROLL_RESET == self.SCROLL_PAGE%}
+        window.scrollTo(0,0)
+    {%endif%}
+    {%if self.SCROLL_RESET == self.SCROLL_BLOCK%}
+        window.scrollTo(0,$("#{{self.id}}").offset().top)
+    {%endif%}
+    })
+{%endif%}
+</script>
+{{content}}

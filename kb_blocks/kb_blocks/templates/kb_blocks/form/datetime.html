@@ -1,0 +1,12 @@
+{%include 'kb_blocks/form/entry.html'%}
+
+<script>
+$(function(){
+    flatpickr(
+        "#{{self.id}}_entry",
+        {
+            enableTime: true
+            }
+        )
+    })
+</script>

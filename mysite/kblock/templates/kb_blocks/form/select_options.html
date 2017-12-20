@@ -1,0 +1,6 @@
+{%for option in options%}
+    <option {%if option.selected%}selected{%endif%}
+            value="{{option.value}}">
+        {{option.title}}
+    </option>
+{%endfor%}

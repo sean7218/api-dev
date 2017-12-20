@@ -1,0 +1,14 @@
+<script>
+"use strict"
+$(function(){
+    var block = {
+        "id": "{{self.id}}",
+        "name": "{{self.name}}",
+        "state": {{state}},
+        "listeners": {{listeners}},
+        "csrf_token": "{{csrf_token}}",
+        }
+    kb_blocks.updateBlock(block)
+    })
+</script>
+{{content}}

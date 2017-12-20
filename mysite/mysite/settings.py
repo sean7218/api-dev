@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls',
     'uberEats',
     'stacker',
+    'kblock',
 ]
 
 MIDDLEWARE = [

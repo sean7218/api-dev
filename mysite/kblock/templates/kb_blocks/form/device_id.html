@@ -1,0 +1,14 @@
+{%include 'kb_blocks/form/entry.html'%}
+
+<script>
+$(function(){
+
+    var device_id = localStorage.getItem("kb_blocks_device_id")
+    if (!device_id){
+        device_id = {{random}}
+        localStorage.setItem("kb_blocks_device_id", device_id)
+        }
+    $("#{{self.id}}").val(device_id)
+
+    })
+</script>

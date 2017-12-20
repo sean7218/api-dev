@@ -1,0 +1,37 @@
+<style>
+.container-example{
+    #display: inline-block;
+    max-width: 400px;
+    }
+.container-control{
+    display:inline-block;
+    }
+</style>
+
+<div class="container-listener-example">
+    {%for example in example_list%}
+        <div class="container-example">
+            {{example}}
+        </div>
+    {%endfor%}
+</div>
+
+<div>
+    <h4>Controls</h4>
+    <div>
+        <a remove="number_1&number_2">Clear numbers</a>
+    </div>
+    <div class="container-control">
+        {%for number in numbers%}
+            <div>
+                <a change="number_1={{number}}">number_1={{number}}</a>
+            </div>
+        {%endfor%}
+    </div>
+    <div class="container-control">
+        {%for number in numbers%}
+            <div>
+                <a change="number_2={{number}}">number_2={{number}}</a>
+            </div>
+        {%endfor%}
+</div>

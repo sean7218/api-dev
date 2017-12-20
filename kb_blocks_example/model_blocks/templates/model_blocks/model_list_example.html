@@ -1,0 +1,14 @@
+<h1>Model List</h1>
+
+<p>A model list presents a list of models to the context</p>
+
+<hr>
+{%for model in model_list%}
+    <div>
+        <h1>{{model.id}}</h1>
+        <p>{{model.name}}, {{model.age}}</p>
+    </div>
+{%endfor%}
+<hr>
+
+<a change="model_blocks=model_view_example&person_id={{model_list.0.id}}">Check out model view</a>

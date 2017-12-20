@@ -5,6 +5,7 @@ from django import forms
 from django.views.generic.edit import (CreateView, UpdateView, FormView)
 from stacker.models import Stack
 
+
 # Create your views here.
 
 def index(request):
@@ -39,6 +40,11 @@ class UpdateStackView(UpdateView):
     model = Stack
     fields = ['name', 'category', 'goal', 'balance','owner']
     template_name_suffix = '_update_form'
+
+
+
+
+
 
 
 

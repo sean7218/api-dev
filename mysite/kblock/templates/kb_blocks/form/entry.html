@@ -1,0 +1,32 @@
+<div class="container-input">
+    <div class="form-group {%if exception.user%}has-error{%endif%}">
+        {%if title%}
+            <label class="control-label title-input">{{title}}</label>
+        {%endif%}
+        <{{self.TAG}} {%for key, value in attributes.items%}
+                     {%if value or value == 0%}
+                        {{key}}="{{value}}"
+                     {%endif%}
+                 {%endfor%}>{%if content%}{%if self.CONTENT_CONTAINER%}<span class="container-entry-content">{{content}}</span>{%else%}{{content}}{%endif%}{%endif%}</{{self.TAG}}>
+        {%if exception.user%}
+            <div class="text-danger text-exception">{{exception.user}}</div>
+        {%endif%}
+    </div>
+</div>
+
+<script>
+$(function(){
+    {%if self.VALIDATE or self.STATE_KEY%}
+        $("#{{self.id}}_entry").{{self.SUBMIT_FUNCTION}}(
+            function(){
+                var value = $("#{{self.id}}_entry").val()
+                var data = {
+                    {{self.name}}: value
+                    }
+                var block = kb_blocks.blocks.{{self.id}}
+                kb_blocks.callFunction(block,"submit",data)
+                }
+            )
+    {%endif%}
+    })
+</script>

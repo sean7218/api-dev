@@ -1,0 +1,35 @@
+<div class="container-form">
+    {%if exception.user%}
+        <div class="{{self.ALERT_CLASS}}">{{exception.user}}</div>
+    {%endif%}
+    <form id="{{self.id}}_form"
+          class="{{self.CLASS}}"
+          enctype="multipart/form-data">
+        {%for entry in entries%}
+            <div class="container-form-entry">
+                {{entry}}
+            </div>
+        {%endfor%}
+        {%if self.BUTTON_TITLE%}
+            <div class="container-button">
+                <button class="{{self.BUTTON_CLASS}}" type="submit">{{self.BUTTON_TITLE}}</button>
+            </div>
+        {%endif%}
+    </form>
+</div>
+
+<script>
+$(function(){
+    $("#{{self.id}}_form").submit(
+        function(){
+            var data = new FormData(this)
+            var block = window.kb_blocks.blocks.{{self.id}}
+            kb_blocks.callFunction(block,"submit",data)
+            return false
+            }
+        )
+    {%if exception.user%}
+        window.scrollTo(0,$("#{{self.id}}").offset().top)
+    {%endif%}
+    })
+</script>
