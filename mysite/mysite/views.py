@@ -4,4 +4,4 @@ def hello_world(request):
     return HttpResponse('Hello World, from Mysite \n')
 
 def index(request):
-    return redirect('/stacker/')
+    return redirect('/kblock/')

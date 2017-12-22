@@ -19,11 +19,8 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^uber/', include('uberEats.urls')),
-    url(r'^polls/', include('polls.urls')),
-    url(r'^stacker/', include('stacker.urls')),
-    url(r'^kblock/', include('kblock.urls')),
-    url(r'', views.index)
+    url(r'', include('kblock.urls')),
+
 ]
 
 
