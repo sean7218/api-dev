@@ -1,1 +1,10 @@
-This is the django project using the library created by k
+##  Demo App for Concept Collective
+### This is the django project using the library created by Kurtis
+
+- the project source code is in mysite/kblock
+- Three blocks were used (HomeBlock, ProfileBlock, DashboardBlock) 
+- Three blocks were organized using the MenuBlock which is subclass from SwitchBlock
+- Dashboard is the main block where CRUD can be done for each stack
+- Dashboard table has two buttons on each row and they are registered with listeners 
+- Dashboard table is query from the MySQL database setup on the server
+
