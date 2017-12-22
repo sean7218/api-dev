@@ -1,4 +1,15 @@
+
 <h1>{{heading}}</h1>
 <p>{{message}}</p>
+ <div class="container-control">
+        <a> Current Edit Item: {{ record_edit.name }} </a> <br>
+        <a> Current Delete Item: {{ record_delete.name }} </a> <br> <br>
+ </div> <br>
+<div class="container">
+    {{rendered_block}}
+    {{rendered_block2}}
+</div>
 
-<a change="{{state_change}}">{{link_text}}</a>
+
+
+

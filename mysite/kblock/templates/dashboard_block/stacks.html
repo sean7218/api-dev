@@ -1,0 +1,79 @@
+<style>
+.container-table > .container-pagination{
+    text-align:center;
+    }
+.container-table > .container-limit-select{
+    max-width:100px;
+    }
+</style>
+
+<div class="container-table">
+
+    {%if limit_select%}
+        <div class="container-limit-select">
+            {{limit_select}}
+        </div>
+    {%endif%}
+
+    <div class="container-control">
+    <table class="{{self.CLASS}}">
+        {%if header%}
+        <thead>
+            <tr>
+                {%for cell in header%}
+                <th>
+                    {%if cell.sort%}
+                    <a {{cell.sort}} >
+                    {%endif%}
+                        {{cell.value}}
+                    {%if cell.sort%}
+                        <span class="{{cell.sort_class}}"></span>
+                    </a>
+                    {%endif%}
+                </th>
+                {%endfor%}
+                <th> Edit </th>
+                <th> Delete </th>
+            </tr>
+        </thead>
+        {%endif%}
+        {%if body%}
+        <tbody>
+            {%for row in body%}
+            <tr>
+                {%for cell in row%}
+                <td>
+                    {%if cell.link%}
+                    <a {{cell.link}}>
+                    {%endif%}
+                        {{cell.value}}
+                    {%if cell.link%}
+                    </a>
+                    {%endif%}
+                </td>
+                {%endfor%}
+                <td> <a change="edit={{forloop.counter}}">Edit</a></td>
+                <td> <a change="delete={{forloop.counter}}">Delete</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+        {%endif%}
+    </table>
+    </div>
+    {%if page_number%}
+        <div class="container-page-number">
+            {{page_number}}
+        </div>
+    {%endif%}
+    {%if page_list%}
+        <div class="container-pagination">
+            <ul class="pagination">
+                {%for page in page_list%}
+                <li class="{{page.class}}">
+                    <a {%if page.class != 'disabled'%}change="{{page.change}}"{%endif%}>{{page.number}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    {%endif%}
+</div>

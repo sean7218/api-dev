@@ -11,8 +11,6 @@ class MenuBlock(Switch):
     AUTH = False
     HEADING = "Menu"
     MESSAGE = "Below is SPA menu and please select the menu item you want"
-    STATE_CHANGE = ""
-    LINK_TEXT = "Next"
     CHILDREN = [
         HomeBlock,
         DashboardBlock,
@@ -29,8 +27,6 @@ class MenuBlock(Switch):
         context = {
             "heading": self.HEADING,
             "message": self.MESSAGE,
-            "state_change": self.STATE_CHANGE,
-            "link_text": self.LINK_TEXT,
             "children": children,
         }
         switch_context = super().get(state, data)
