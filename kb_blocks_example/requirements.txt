@@ -1,7 +1,0 @@
-django==1.11
-gunicorn==19.6.0
-whitenoise==3.2
-git+ssh://git@gitlab.com/kbGit/kbde@v1
-git+ssh://git@gitlab.com/kbGit/kb_blocks@v5
-dj-database-url
-mysqlclient
